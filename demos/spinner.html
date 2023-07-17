@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <script src="/src/main.js" type="module"></script>
+    <link rel="shortcut icon" href="/imgs/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/styles/main.css" media="none" onload="if(media!='all')media='all'">
+    <noscript><link rel="stylesheet" href="/styles/main.css"></noscript>
+</head>
+<body>
+
+    <fieldset data-component="optionspinner">
+        <legend>
+            <label for="month-menu" 
+                id="month-label">
+                Month
+            </label>
+        </legend>
+        <button type="button" 
+            id="month-prev" 
+            data-decrement="month-menu">
+            PRE
+        </button>
+        <input type="text" 
+            name="month-menu" 
+            id="month-menu"
+            list="month-list"
+            maxlength="3"
+            size="3">
+        <button type="button" 
+            id="month-next" 
+            data-increment="month-menu">
+            NEX
+        </button>
+        <datalist id="month-list">
+            <option value="Jan" label="January">
+            <option value="Feb" label="February">
+            <option value="Mar" label="March">
+            <option value="Apr" label="April">
+            <option value="May" label="May">
+            <option value="Jun" label="June">
+            <option value="Jul" label="July">
+            <option value="Aug" label="August">
+            <option value="Sep" label="September">
+            <option value="Oct" label="October">
+            <option value="Nov" label="November">
+            <option value="Dec" label="December">
+        </datalist>
+    </fieldset>
+
+</body>
+</html>
