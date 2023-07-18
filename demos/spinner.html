@@ -12,7 +12,7 @@
 </head>
 <body>
 
-    <fieldset data-component="optionspinner">
+    <fieldset>
         <legend>
             <label for="month-menu" 
                 id="month-label">
@@ -29,7 +29,9 @@
             id="month-menu"
             list="month-list"
             maxlength="3"
-            size="3">
+            size="3"
+            pattern="^[A-Za-z]+$"
+            data-component="menuspinner">
         <button type="button" 
             id="month-next" 
             data-increment="month-menu">
