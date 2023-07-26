@@ -50,5 +50,4 @@ utils.query.controlFor = (element) => {
 
 utils.event = {};
 
-export default utils;
 

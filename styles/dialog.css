@@ -1,0 +1,41 @@
+@import url("./main.css");
+
+dialog {
+    display: flex;
+    flex-direction: column;
+    position: static;
+    padding: 0;
+    margin: 0;
+}
+
+dialog header,
+dialog fieldset,
+dialog legend,
+dialog h1 {
+    font-size: 1em;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+dialog button,
+dialog input {
+
+}
+
+table {
+    border-collapse: collapse;
+}
+
+
+dialog td, th {
+    border: .125rem solid gray;
+    width: 3cqmax;
+    height: 3cqmax;
+}
+
+table [type=submit] {
+    width: 100%;
+    height: 100%;
+}

@@ -4,14 +4,355 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index</title>
+    <title>Datepicker Example</title>
     <script src="/src/main.js" type="module"></script>
     <link rel="shortcut icon" href="/imgs/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="/styles/main.css" media="none" onload="if(media!='all')media='all'">
-    <noscript><link rel="stylesheet" href="/styles/main.css"></noscript>
+    <!--
+    <link rel="stylesheet" href="/styles/dialog.css" media="none" onload="if(media!='all')media='all'">
+    <noscript><link rel="stylesheet" href="/styles/dialog.css"></noscript>
+    -->
 </head>
 <body>
 
+    <form action="">
+        <fieldset>
+            <legend><h1>Main Form</h1></legend>
+            <p>
+                <label for="start" 
+                    id="start-label">
+                    Start Date
+                <input type="text" 
+                    name="start" 
+                    id="start">
+                </label>
+                <button type="button" 
+                    id="start-btn"
+                    data-expands="start-datepicker"
+                    aria-labelledby="start-label start-btn">
+                    <span class="hover-label">Datepicker</span>
+                </button>
+            </p>
+            <p>
+                <label for="end" 
+                    id="end-label">
+                    End Date
+                <input type="text" 
+                    name="end" 
+                    id="end">
+                </label>
+                <button type="button" 
+                    id="end-btn"
+                    data-component="datepicker"
+                    aria-labelledby="end-label end-btn">
+                    <span class="hover-label">Datepicker</span>
+                </button>
+            </p>
+        </fieldset>
+    </form>
+
+    <template id="datepicker-template">
+        <dialog>
+            <form method="dialog" novalidate role="none">
+                <header>
+                    <button type="submit">Cancel</button>
+                    <fieldset data-id="month">
+                        <legend class="visually-hidden">
+                            <label for="">Month</label>
+                        </legend>
+                        <button type="button"
+                            id=""
+                            data-decrement="">
+                            MMM
+                        </button>
+                        <input type="text" 
+                            name="" 
+                            id=""
+                            list=""
+                            maxlength="3"
+                            size="3"
+                            pattern="[A-Za-z]">
+                        <output for="" class="visually-hidden"></output>
+                        <datalist id="">
+                            <option value="Jan" label="January">
+                            <option value="Feb" label="February">
+                            <option value="Mar" label="March">
+                            <option value="Apr" label="April">
+                            <option value="May" label="May">
+                            <option value="Jun" label="June">
+                            <option value="Jul" label="July">
+                            <option value="Aug" label="August">
+                            <option value="Sep" label="September">
+                            <option value="Oct" label="October">
+                            <option value="Nov" label="November">
+                            <option value="Dec" label="December">
+                        </datalist>
+                        <button type="button" 
+                            id=""
+                            data-increment="">
+                            MMM
+                        </button>
+                    </fieldset>
+                    <fieldset data-id="year">
+                        <legend class="visually-hidden">
+                            <label for="">Year</label>
+                        </legend>
+                        <button type="button"
+                            id="" 
+                            data-decrement="">
+                            YYYY
+                        </button>
+                        <input type="text" 
+                            name="" 
+                            id=""
+                            minlength="4"
+                            maxlength="4"
+                            size="4"
+                            pattern="[0-9]">
+                        <output for="" class="visually-hidden"></output>
+                        <button type="button" 
+                            id="" 
+                            data-increment="">
+                            YYYY
+                        </button>
+                    </fieldset>
+                </header>
+                
+                <table>
+                    <caption>
+                        <h1>MONTH YEAR</h1>
+                    </caption>
+                    <thead>
+                        <tr>
+                            <th title="Sunday">Sun</th>
+                            <th title="Monday">Mon</th>
+                            <th title="Tuesday">Tue</th>
+                            <th title="Wednesday">Wed</th>
+                            <th title="Thursday">Thu</th>
+                            <th title="Friday">Fri</th>
+                            <th title="Saturday">Sat</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="submit" value="0" id=""></td>
+                            <td><input type="submit" value="0" id=""></td>
+                            <td><input type="submit" value="0" id=""></td>
+                            <td><input type="submit" value="0" id=""></td>
+                            <td><input type="submit" value="0" id=""></td>
+                            <td><input type="submit" value="0" id=""></td>
+                            <td><input type="submit" value="0" id=""></td>
+                        </tr>
+                        <tr>
+                            <td><input type="submit" value="0" id=""></td>
+                            <td><input type="submit" value="0" id=""></td>
+                            <td><input type="submit" value="0" id=""></td>
+                            <td><input type="submit" value="0" id=""></td>
+                            <td><input type="submit" value="0" id=""></td>
+                            <td><input type="submit" value="0" id=""></td>
+                            <td><input type="submit" value="0" id=""></td>
+                        </tr>
+                        <tr>
+                            <td><input type="submit" value="0" id=""></td>
+                            <td><input type="submit" value="0" id=""></td>
+                            <td><input type="submit" value="0" id=""></td>
+                            <td><input type="submit" value="0" id=""></td>
+                            <td><input type="submit" value="0" id=""></td>
+                            <td><input type="submit" value="0" id=""></td>
+                            <td><input type="submit" value="0" id=""></td>
+                        </tr>
+                        <tr>
+                            <td><input type="submit" value="0" id=""></td>
+                            <td><input type="submit" value="0" id=""></td>
+                            <td><input type="submit" value="0" id=""></td>
+                            <td><input type="submit" value="0" id=""></td>
+                            <td><input type="submit" value="0" id=""></td>
+                            <td><input type="submit" value="0" id=""></td>
+                            <td><input type="submit" value="0" id=""></td>
+                        </tr>
+                        <tr>
+                            <td><input type="submit" value="0" id=""></td>
+                            <td><input type="submit" value="0" id=""></td>
+                            <td><input type="submit" value="0" id=""></td>
+                            <td><input type="submit" value="0" id=""></td>
+                            <td><input type="submit" value="0" id=""></td>
+                            <td><input type="submit" value="0" id=""></td>
+                            <td><input type="submit" value="0" id=""></td>
+                        </tr>
+                        <tr>
+                            <td><input type="submit" value="0" id=""></td>
+                            <td><input type="submit" value="0" id=""></td>
+                            <td><input type="submit" value="0" id=""></td>
+                            <td><input type="submit" value="0" id=""></td>
+                            <td><input type="submit" value="0" id=""></td>
+                            <td><input type="submit" value="0" id=""></td>
+                            <td><input type="submit" value="0" id=""></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+        </dialog>
+    </template>
+
+
+    
+    <!--
+    <form method="">
+        <p>
+            <label for="appt" id="appt-label">
+                <input type="button" 
+                    id="appt-btn" 
+                    value="Appointment Date"
+                    data-modal="appt-picker">
+                <input type="text" 
+                    name="appt" 
+                    id="appt">
+            </label>
+            <dialog id="appt-picker" data-component="datepicker">
+                <form name="appt" method="dialog" role="none">
+                    <header>
+                        <button type="submit">Cancel</button>
+                        <fieldset>
+                            <legend class="visually-hidden">
+                                <label for="appt-month">Month</label>
+                            </legend>
+                            <button type="button"
+                                id="appt-month-dec" 
+                                data-decrement="appt-month">
+                                Jun
+                            </button>
+                            <input type="text" 
+                                name="appt-month" 
+                                id="appt-month"
+                                list="months"
+                                maxlength="3"
+                                size="3"
+                                pattern="[A-Za-z]"
+                                data-type="month"
+                                data-component="spinner">
+                            <button type="button" 
+                                id="appt-month-inc" 
+                                data-increment="appt-month">
+                                Aug
+                            </button>
+                        </fieldset>
+                        <fieldset>
+                            <legend class="visually-hidden">
+                                <label for="appt-year">Year</label>
+                            </legend>
+                            <button type="button" 
+                                id="appt-year-dec" 
+                                data-decrement="appt-year">
+                                2022
+                            </button>
+                            <input type="text" 
+                                name="appt-year" 
+                                id="appt-year"
+                                maxlength="4"
+                                size="4"
+                                pattern="[0-9]"
+                                data-type="year"
+                                data-component="numspinner">
+                            <button type="button" 
+                                id="appt-year-inc" 
+                                data-increment="appt-year">
+                                2024
+                            </button>
+                        </fieldset>
+    
+                    </header>
+                    <datalist id="months">
+                        <option value="Jan" label="January">
+                        <option value="Feb" label="February">
+                        <option value="Mar" label="March">
+                        <option value="Apr" label="April">
+                        <option value="May" label="May">
+                        <option value="Jun" label="June">
+                        <option value="Jul" label="July">
+                        <option value="Aug" label="August">
+                        <option value="Sep" label="September">
+                        <option value="Oct" label="October">
+                        <option value="Nov" label="November">
+                        <option value="Dec" label="December">
+                    </datalist>
+                    <table>
+                        <caption>
+                            <h1></h1>
+                        </caption>
+                        <thead>
+                            <tr>
+                                <th title="Sunday">Sun</th>
+                                <th title="Monday">Mon</th>
+                                <th title="Tuesday">Tue</th>
+                                <th title="Wednesday">Wed</th>
+                                <th title="Thursday">Thu</th>
+                                <th title="Friday">Fri</th>
+                                <th title="Saturday">Sat</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input type="submit" value="0" id=""></td>
+                                <td><input type="submit" value="0" id=""></td>
+                                <td><input type="submit" value="0" id=""></td>
+                                <td><input type="submit" value="0" id=""></td>
+                                <td><input type="submit" value="0" id=""></td>
+                                <td><input type="submit" value="0" id=""></td>
+                                <td><input type="submit" value="0" id=""></td>
+                            </tr>
+                            <tr>
+                                <td><input type="submit" value="0" id=""></td>
+                                <td><input type="submit" value="0" id=""></td>
+                                <td><input type="submit" value="0" id=""></td>
+                                <td><input type="submit" value="0" id=""></td>
+                                <td><input type="submit" value="0" id=""></td>
+                                <td><input type="submit" value="0" id=""></td>
+                                <td><input type="submit" value="0" id=""></td>
+                            </tr>
+                            <tr>
+                                <td><input type="submit" value="0" id=""></td>
+                                <td><input type="submit" value="0" id=""></td>
+                                <td><input type="submit" value="0" id=""></td>
+                                <td><input type="submit" value="0" id=""></td>
+                                <td><input type="submit" value="0" id=""></td>
+                                <td><input type="submit" value="0" id=""></td>
+                                <td><input type="submit" value="0" id=""></td>
+                            </tr>
+                            <tr>
+                                <td><input type="submit" value="0" id=""></td>
+                                <td><input type="submit" value="0" id=""></td>
+                                <td><input type="submit" value="0" id=""></td>
+                                <td><input type="submit" value="0" id=""></td>
+                                <td><input type="submit" value="0" id=""></td>
+                                <td><input type="submit" value="0" id=""></td>
+                                <td><input type="submit" value="0" id=""></td>
+                            </tr>
+                            <tr>
+                                <td><input type="submit" value="0" id=""></td>
+                                <td><input type="submit" value="0" id=""></td>
+                                <td><input type="submit" value="0" id=""></td>
+                                <td><input type="submit" value="0" id=""></td>
+                                <td><input type="submit" value="0" id=""></td>
+                                <td><input type="submit" value="0" id=""></td>
+                                <td><input type="submit" value="0" id=""></td>
+                            </tr>
+                            <tr>
+                                <td><input type="submit" value="0" id=""></td>
+                                <td><input type="submit" value="0" id=""></td>
+                                <td><input type="submit" value="0" id=""></td>
+                                <td><input type="submit" value="0" id=""></td>
+                                <td><input type="submit" value="0" id=""></td>
+                                <td><input type="submit" value="0" id=""></td>
+                                <td><input type="submit" value="0" id=""></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form>
+            </dialog>
+        </p>
+        
+    </form>
+    -->
+    
 
 </body>
 </html>

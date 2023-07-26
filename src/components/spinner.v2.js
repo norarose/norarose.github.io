@@ -1,19 +1,14 @@
 
-class MenuSpinner {
-    constructor(inputElement) {
-        this.spinField = inputElement;
+
+export default class Spinner {
+    constructor(fieldset) {
+        this.dataGroup = fieldset;
+        this.spinField = this.dataGroup.querySelector('input');
     }
-    get updateNotif() {
-        return this._updateNotif;
-    }
-    set updateNotif(txt) {
-        this._updateNotif = document.querySelector(`output[for=${this.spinField.id}]`);
-        this._updateNotif.innerHTML = txt;
-    }
-    get expanded() {
+    get ariaExpanded() {
         return this.spinField.getAttribute('aria-expanded');
     }
-    set expanded(bool) {
+    set ariaExpanded(bool) {
         this.spinField.setAttribute('aria-expanded', bool);
     }
     get upBtn() {
@@ -69,18 +64,17 @@ class MenuSpinner {
         if (isValid === false) {
             const invalidRemoved = value.replaceAll(e.data, value.charAt(value.length));
             e.target.value = invalidRemoved;
-            this.expanded = true;
+            this.ariaExpanded = true;
         }
-        const msg = document.querySelector(`output[for=${this.spinField.id}]`);
-        const numResults = this.getResultCount();
         const hasEntry = e.target.value.length > 0;
         if (hasEntry) {
-            this.expanded = true;
+            this.ariaExpanded = true;
         }
         else if (!hasEntry) {
-            this.expanded = false;
+            this.ariaExpanded = false;
         }
-        this.updateNotif = `${numResults} results`;
+        //const numResults = this.getResultCount();
+        //this.updateNotif = `${numResults} results`;
     }
     blurEvent = (e) => {
         let val = e.target.value;
@@ -93,9 +87,9 @@ class MenuSpinner {
         }
     }
     init() {
-        this.expanded = false;
+        this.ariaExpanded = false;
         this.spinField.title = 'Start typing to see results.'
-        this.updateNotif = this.optionFromValue.label;
+        //this.updateNotif = this.optionFromValue.label;
         this.spinField.addEventListener('focus', this);
         this.spinField.addEventListener('blur', this);
         this.spinField.addEventListener('input', this);
@@ -103,48 +97,4 @@ class MenuSpinner {
     }
 }
 
-class Datepicker {
-    constructor(modal) {
-        this.modal = modal;
-        this.monthSpinner = new MenuSpinner(this.modal.querySelector('[data-type=month]'));
-    }
-    get modalBtn() {
-        return document.querySelector(`[data-modal=${this.modal.id}]`);
-    }
-    get expanded() {
-        return this._expanded;
-    }
-    set expanded(bool) {
-        if (this._expanded === undefined) {
-            this._expanded = false;
-        }
-        else if (bool === true) {
-            this.modal.show();
-            this._expanded = true;
-        }
-        else if (bool === false) {
-            this.modal.close();
-            this._expanded = false;
-        }
-        this.modalBtn.setAttribute('aria-expanded', bool);
-    }
-    get monthIndex() {
-        const spinner = this.monthSpinner;
-        const field = spinner.spinField;
-        const options = field.list.options;
-        const selected = spinner.optionFromValue;
-        return options.indexOf(selected);
-    }
-    set monthIndex(i) {
-        const field = this.monthSpinner.spinField;
-        const options = field.list.options;
-        field.value = options[i].value;
-    }
-    init() {
-        this.expanded = false;
-        this.modalBtn.onclick = () => this.expanded = !this._expanded;
-        this.monthIndex = new Date().getMonth();
-        this.monthSpinner.spinField.defaultValue = this.monthSpinner.spinField.value;
-        this.monthSpinner.init();
-    }
-}
+

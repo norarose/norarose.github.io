@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <!--
+        <link rel="stylesheet" href="/styles/main.css" media="none" onload="if(media!='all')media='all'">
+        <noscript><link rel="stylesheet" href="/styles/main.css"></noscript>
+    -->
+    <script src="/src/main.js" type="module"></script>
+    <link rel="shortcut icon" href="/imgs/favicon.ico" type="image/x-icon">
+    
+</head>
+<body>
+
+    <fieldset>
+        <legend><label for="month">Month</label></legend>
+        <input type="text" 
+            name="month" 
+            id="month"
+            maxlength="3"
+            size="3"
+            pattern="[A-Za-z]"
+            data-list="month-list"
+            data-component="autocomplete">
+        <output for="month"></output>
+        <ul id="month-list" 
+            role="listbox" 
+            data-default-option="current_month">
+            <li data-value="Jan">January
+            <li data-value="Feb">February
+            <li data-value="Mar">March
+            <li data-value="Apr">April
+            <li data-value="May">May
+            <li data-value="Jun">June
+            <li data-value="Jul">July
+            <li data-value="Aug">August
+            <li data-value="Sep">September
+            <li data-value="Oct">October
+            <li data-value="Nov">November
+            <li data-value="Dec">December
+        </ul>
+    </fieldset>
+</body>
+</html>

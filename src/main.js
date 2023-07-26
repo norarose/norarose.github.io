@@ -1,7 +1,5 @@
-import {MenuSpinner} from "./components/spinner.js";
+import AutoComplete from "./components/autocomplete.v2.js";
 
-let monthMenu = document.getElementById('month-menu');
-monthMenu.defaultValue = monthMenu.list.options[new Date().getMonth()].value;
 
 function initComponentClass(classObj) {
     let dataComponent = new String(classObj.name).toLowerCase();
@@ -12,5 +10,5 @@ function initComponentClass(classObj) {
     }
 }
 
-initComponentClass(MenuSpinner);
+initComponentClass(AutoComplete)
 
