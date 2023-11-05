@@ -1,0 +1,43 @@
+
+:root {
+    --caret-color: black;
+}
+
+.datepicker {
+    width: ;
+    max-width: 100vi;
+}
+
+.datepicker * {
+    outline: 1px solid pink;
+}
+
+.datepicker form {
+    display: grid;
+}
+
+.datepicker header {
+    display: grid;
+    grid-template-columns: auto repeat(auto-fit, minmax());
+}
+
+.datepicker header [type=submit] {
+
+}
+
+.datepicker header [type=reset] {
+
+}
+
+.datepicker fieldset.month {
+
+}
+
+.datepicker fieldset.year {
+
+}
+
+
+.datepicker table {
+
+}

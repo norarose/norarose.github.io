@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <script src="/src/main.js" type="module"></script>
+    <link rel="shortcut icon" href="/imgs/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/styles/main.css" media="none" onload="if(media!='all')media='all'">
+    <noscript><link rel="stylesheet" href="/styles/main.css"></noscript>
+</head>
+<body>    
+
+    <dialog class="datepicker" data-component="datepicker" open>
+        <form method="dialog" role="none">
+            <header>
+                <div>
+                    <button type="submit">Close</button>
+                    <button type="reset">Today</button>
+                </div>
+                <fieldset class="spinbox month" data-component="spinbox">
+                    <legend class="visually-hidden">
+                        <label for="month">Month</label>
+                    </legend>
+                    <button type="button"
+                        id="month-dec" 
+                        data-decrement>
+                        <span class="visually-hidden">July</span>
+                    </button>
+                    <input type="text" 
+                        name="month" 
+                        id="month" 
+                        size="4"
+                        maxlength="3"
+                        data-component="autocomplete_list"
+                        data-allow="[A-Za-z]"
+                        data-id="01"
+                        data-ref="months">
+                    <button type="button"
+                        id="month-inc" 
+                        data-increment>
+                        <span class="visually-hidden">September</span>
+                    </button>
+                </fieldset>
+                <fieldset class="spinbox year" data-component="spinbox">
+                    <legend class="visually-hidden">
+                        <label for="year">Year</label>
+                    </legend>
+                    <button type="button"
+                        id="year-dec" 
+                        data-decrement>
+                        <span class="visually-hidden">2022</span>
+                    </button>
+                    <input type="text" 
+                        name="year" 
+                        id="year" 
+                        size="4"
+                        maxlength="4"
+                        data-allow="[0-9]">
+                    <button type="button"
+                        id="year-inc" 
+                        data-increment>
+                        <span class="visually-hidden">2023</span>
+                    </button>
+                </fieldset>
+            </header>
+            <table>
+                <caption><h1>Calendar</h1></caption>
+                <thead>
+                    <tr>
+                        <th>Sun</th>
+                        <th>Mon</th>
+                        <th>Tue</th>
+                        <th>Wed</th>
+                        <th>Thu</th>
+                        <th>Fri</th>
+                        <th>Sat</th>
+                    </tr>
+                </thead>
+            </table>
+        </form>
+    </dialog>
+
+
+
+</body>
+</html>

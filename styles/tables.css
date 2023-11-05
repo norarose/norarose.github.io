@@ -1,0 +1,13 @@
+
+:root {
+    ---table-border-color: black;
+}
+
+
+table {
+    border-collapse: collapse;
+}
+
+tr > * {
+    border: var(--line-width) solid var(---table-border-color);
+}
